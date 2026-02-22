@@ -6,30 +6,47 @@
 <title>MGM Artesanía</title>
 
 <style>
+
 body{
     margin:0;
     font-family: 'Segoe UI', sans-serif;
     background-color:#f5f1e8;
     color:#333;
+    scroll-behavior:smooth;
 }
 
 header{
-    background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f');
-    background-size:cover;
-    background-position:center;
+    position:relative;
+    background: url('madera.jpg') center/cover no-repeat;
     color:white;
-    padding:120px 20px;
+    padding:160px 20px;
     text-align:center;
 }
 
+header::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+}
+
+header h1, header p{
+    position:relative;
+    z-index:2;
+    text-shadow:2px 2px 5px black;
+}
+
 header h1{
-    font-size:55px;
+    font-size:65px;
     margin:0;
+    letter-spacing:3px;
 }
 
 header p{
-    font-size:20px;
+    font-size:24px;
     margin-top:10px;
 }
 
@@ -42,8 +59,9 @@ nav{
 nav a{
     color:white;
     text-decoration:none;
-    margin:0 15px;
+    margin:0 20px;
     font-weight:bold;
+    transition:0.3s;
 }
 
 nav a:hover{
@@ -51,7 +69,7 @@ nav a:hover{
 }
 
 section{
-    padding:60px 20px;
+    padding:70px 20px;
     text-align:center;
 }
 
@@ -59,35 +77,36 @@ section{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    gap:30px;
+    gap:35px;
 }
 
 .card{
     background:white;
     width:280px;
-    padding:20px;
+    padding:25px;
     border-radius:15px;
-    box-shadow:0 6px 15px rgba(0,0,0,0.15);
-    transition:0.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    transition:0.4s;
 }
 
 .card:hover{
-    transform:scale(1.05);
+    transform:translateY(-10px);
 }
 
 .card img{
     width:100%;
-    border-radius:10px;
+    border-radius:12px;
     margin-bottom:15px;
 }
 
 .btn{
     background:#6f4e37;
     color:white;
-    padding:12px 25px;
+    padding:14px 30px;
     text-decoration:none;
-    border-radius:8px;
+    border-radius:10px;
     font-weight:bold;
+    transition:0.3s;
 }
 
 .btn:hover{
@@ -101,6 +120,27 @@ footer{
     padding:25px;
     text-align:center;
 }
+
+/* BOTÓN FLOTANTE WHATSAPP */
+
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:15px 18px;
+    border-radius:50%;
+    font-size:22px;
+    text-decoration:none;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    transition:0.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.1);
+}
+
 </style>
 </head>
 
@@ -108,7 +148,7 @@ footer{
 
 <header>
 <h1>MGM</h1>
-<p>Artesanía en Madera para el Asado Argentino</p>
+<p>Artesanía</p>
 </header>
 
 <nav>
@@ -119,7 +159,7 @@ footer{
 
 <section id="nosotros">
 <h2>Sobre Nosotros</h2>
-<p>En MGM fabricamos tablas, mates, cuchillos, jamoneras y productos artesanales en madera con calidad y dedicación.</p>
+<p>En MGM fabricamos productos artesanales en madera con calidad, diseño y dedicación para el asado argentino.</p>
 </section>
 
 <section id="productos">
@@ -130,37 +170,22 @@ footer{
 <div class="card">
 <img src="plato.jpg">
 <h3>🪵 Tablas para Asado</h3>
-<p>Tablas resistentes y elegantes para servir carnes.</p>
+<p>Resistentes, elegantes y hechas a mano.</p>
 </div>
 
 <div class="card">
-<img src="plato.jpg">
 <h3>🧉 Mates</h3>
 <p>Mates artesanales con terminaciones premium.</p>
 </div>
 
 <div class="card">
-<img src="plato.jpg">
-<h3>🔪 Cuchillos</h3>
-<p>Cuchillos de excelente filo con mango artesanal.</p>
+<h3>🍷 Copas</h3>
+<p>Ideales para acompañar cada asado.</p>
 </div>
 
 <div class="card">
-<img src="plato.jpg">
 <h3>🥩 Jamoneras</h3>
 <p>Diseño robusto y práctico.</p>
-</div>
-
-<div class="card">
-<img src="plato.jpg">
-<h3>🍷 Copas</h3>
-<p>Copas ideales para acompañar el asado.</p>
-</div>
-
-<div class="card">
-<img src="plato.jpg">
-<h3>🍴 Tenedores</h3>
-<p>Tenedores resistentes para el asador.</p>
 </div>
 
 </div>
@@ -168,17 +193,30 @@ footer{
 
 <section id="contacto">
 <h2>Contacto</h2>
-<p>📞 Teléfono: +54 9 11 1234 5678</p>
-<p>📧 Email: contacto@mgm.com</p>
-<br>
-<a class="btn" href="https://wa.me/5491112345678" target="_blank">
-Contactar por WhatsApp
+<p>📞 Teléfono: +54 9 2622 601 620</p>
+
+<p>
+📷 Instagram:
+<a href="https://www.instagram.com/mgm_artesanias" target="_blank">
+@mgm_artesanias
 </a>
+</p>
+
+<br>
+
+<a class="btn" href="https://wa.me/5492622601620" target="_blank">
+Enviar mensaje por WhatsApp
+</a>
+
 </section>
 
 <footer>
 <p>© 2026 MGM Artesanía - Todos los derechos reservados</p>
 </footer>
+
+<a class="whatsapp" href="https://wa.me/5492622601620" target="_blank">
+💬
+</a>
 
 </body>
 </html>
