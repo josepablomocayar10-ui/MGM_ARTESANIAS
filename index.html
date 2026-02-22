@@ -9,67 +9,64 @@
 
 body{
     margin:0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color:#f5f1e8;
-    color:#333;
-    scroll-behavior:smooth;
+    font-family:'Segoe UI', sans-serif;
+    background:linear-gradient(to bottom,#fdf6ec,#f3e5d0);
+    color:#4b2e2e;
 }
 
 header{
-    position:relative;
-    background: url('madera.jpg') center/cover no-repeat;
-    color:white;
-    padding:160px 20px;
+    background:url('madera.jpg') center/cover no-repeat;
+    padding:180px 20px;
     text-align:center;
+    color:white;
+    position:relative;
 }
 
 header::after{
     content:"";
     position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.5);
+    top:0;left:0;
+    width:100%;height:100%;
+    background:rgba(0,0,0,0.45);
 }
 
 header h1, header p{
     position:relative;
     z-index:2;
-    text-shadow:2px 2px 5px black;
+    text-shadow:2px 2px 6px black;
 }
 
 header h1{
-    font-size:65px;
+    font-size:70px;
     margin:0;
-    letter-spacing:3px;
 }
 
 header p{
-    font-size:24px;
-    margin-top:10px;
+    font-size:28px;
+    letter-spacing:2px;
 }
 
 nav{
-    background:#3b2f2f;
-    padding:15px;
+    background:#8b5e3c;
+    padding:18px;
     text-align:center;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    margin:0 20px;
+    margin:0 25px;
     font-weight:bold;
+    font-size:18px;
     transition:0.3s;
 }
 
 nav a:hover{
-    color:#d4a373;
+    color:#ffe0b2;
 }
 
 section{
-    padding:70px 20px;
+    padding:80px 20px;
     text-align:center;
 }
 
@@ -81,47 +78,64 @@ section{
 }
 
 .card{
-    background:white;
-    width:280px;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.15);
-    transition:0.4s;
+    background:#fffaf3;
+    width:270px;
+    padding:20px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.card img{
+    width:220px;
+    border-radius:12px;
+    margin-top:10px;
 }
 
 .card:hover{
     transform:translateY(-10px);
+    background:#ffe8cc;
 }
 
-.card img{
-    width:100%;
-    border-radius:12px;
-    margin-bottom:15px;
+.galeria{
+    display:none;
+    margin-top:50px;
+}
+
+.galeria img{
+    width:260px;
+    margin:15px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+    transition:0.3s;
+}
+
+.galeria img:hover{
+    transform:scale(1.08);
 }
 
 .btn{
     background:#6f4e37;
     color:white;
-    padding:14px 30px;
+    padding:15px 35px;
     text-decoration:none;
-    border-radius:10px;
+    border-radius:12px;
     font-weight:bold;
+    font-size:18px;
     transition:0.3s;
 }
 
 .btn:hover{
-    background:#d4a373;
-    color:black;
+    background:#5a3d2b;
 }
 
 footer{
-    background:#3b2f2f;
+    background:#8b5e3c;
     color:white;
-    padding:25px;
-    text-align:center;
+    padding:30px;
+    font-size:15px;
 }
-
-/* BOTÓN FLOTANTE WHATSAPP */
 
 .whatsapp{
     position:fixed;
@@ -129,70 +143,107 @@ footer{
     right:20px;
     background:#25D366;
     color:white;
-    padding:15px 18px;
+    padding:16px 20px;
     border-radius:50%;
-    font-size:22px;
+    font-size:24px;
     text-decoration:none;
-    box-shadow:0 5px 15px rgba(0,0,0,0.3);
-    transition:0.3s;
-}
-
-.whatsapp:hover{
-    transform:scale(1.1);
+    box-shadow:0 6px 15px rgba(0,0,0,0.3);
 }
 
 </style>
+
+<script>
+function mostrar(id){
+    var secciones=document.querySelectorAll('.galeria');
+    secciones.forEach(sec=>sec.style.display="none");
+    document.getElementById(id).style.display="block";
+    document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+</script>
+
 </head>
 
 <body>
 
 <header>
 <h1>MGM</h1>
-<p>Artesanía</p>
+<p>Artesanía en Madera</p>
 </header>
 
 <nav>
-<a href="#nosotros">Nosotros</a>
 <a href="#productos">Productos</a>
 <a href="#contacto">Contacto</a>
 </nav>
-
-<section id="nosotros">
-<h2>Sobre Nosotros</h2>
-<p>En MGM fabricamos productos artesanales en madera con calidad, diseño y dedicación para el asado argentino.</p>
-</section>
 
 <section id="productos">
 <h2>Nuestros Productos</h2>
 
 <div class="productos">
 
-<div class="card">
+<div class="card" onclick="mostrar('tablas')">
+<h3>🪵 Tablas</h3>
 <img src="plato.jpg">
-<h3>🪵 Tablas para Asado</h3>
-<p>Resistentes, elegantes y hechas a mano.</p>
 </div>
 
-<div class="card">
-<h3>🧉 Mates</h3>
-<p>Mates artesanales con terminaciones premium.</p>
-</div>
-
-<div class="card">
+<div class="card" onclick="mostrar('copas')">
 <h3>🍷 Copas</h3>
-<p>Ideales para acompañar cada asado.</p>
+<img src="copa.jpg">
 </div>
 
-<div class="card">
-<h3>🥩 Jamoneras</h3>
-<p>Diseño robusto y práctico.</p>
+<div class="card" onclick="mostrar('mates')">
+<h3>🧉 Mates</h3>
+<img src="mate1.jpg">
+</div>
+
+<div class="card" onclick="mostrar('arboles')">
+<h3>🎄 Arbolitos</h3>
+<img src="arbolito.jpg">
+</div>
+
+<div class="card" onclick="mostrar('jamonera')">
+<h3>🐖 Jamonera</h3>
+<img src="jamonera.jpg">
 </div>
 
 </div>
+
+<div id="tablas" class="galeria">
+<h2>Galería de Tablas</h2>
+<img src="plato.jpg">
+<img src="plato1.jpg">
+<img src="plato2.jpg">
+<img src="plato3.jpg">
+<img src="plato4.jpg">
+</div>
+
+<div id="copas" class="galeria">
+<h2>Galería de Copas</h2>
+<img src="copa.jpg">
+<img src="copa1.jpg">
+<img src="vaso.jpg">
+</div>
+
+<div id="mates" class="galeria">
+<h2>Galería de Mates</h2>
+<img src="mate1.jpg">
+</div>
+
+<div id="arboles" class="galeria">
+<h2>Galería de Arbolitos</h2>
+<img src="arbolito.jpg">
+<img src="colon.jpg">
+</div>
+
+<div id="jamonera" class="galeria">
+<h2>Galería de Jamonera</h2>
+<img src="jamonera.jpg">
+</div>
+
 </section>
 
 <section id="contacto">
 <h2>Contacto</h2>
+
 <p>📞 Teléfono: +54 9 2622 601 620</p>
 
 <p>
@@ -202,7 +253,7 @@ footer{
 </a>
 </p>
 
-<br>
+<br><br>
 
 <a class="btn" href="https://wa.me/5492622601620" target="_blank">
 Enviar mensaje por WhatsApp
@@ -211,7 +262,7 @@ Enviar mensaje por WhatsApp
 </section>
 
 <footer>
-<p>© 2026 MGM Artesanía - Todos los derechos reservados</p>
+© 2026 MGM Artesanía - Todos los derechos reservados
 </footer>
 
 <a class="whatsapp" href="https://wa.me/5492622601620" target="_blank">
