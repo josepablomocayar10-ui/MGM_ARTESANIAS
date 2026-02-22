@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MGM - Artesanía en Madera</title>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color:#f5f1e8;
+    color:#333;
+}
+
+header{
+    background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1604908176997-43199f37c0c0');
+    background-size:cover;
+    background-position:center;
+    color:white;
+    padding:100px 20px;
+    text-align:center;
+}
+
+header h1{
+    font-size:50px;
+    margin:0;
+}
+
+header p{
+    font-size:20px;
+}
+
+nav{
+    background:#3b2f2f;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#d4a373;
+}
+
+section{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.productos{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+}
+
+.card{
+    background:white;
+    width:260px;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+.btn{
+    background:#6f4e37;
+    color:white;
+    padding:12px 25px;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:#d4a373;
+    color:black;
+}
+
+footer{
+    background:#3b2f2f;
+    color:white;
+    padding:25px;
+    text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>MGM</h1>
+<p>Artesanía en Madera para el Asado Argentino</p>
+</header>
+
+<nav>
+<a href="#nosotros">Nosotros</a>
+<a href="#productos">Productos</a>
+<a href="#contacto">Contacto</a>
+</nav>
+
+<section id="nosotros">
+<h2>Sobre Nosotros</h2>
+<p>En MGM fabricamos productos artesanales en madera con calidad, dedicación y pasión por el asado argentino. Cada pieza es única y hecha con materiales seleccionados.</p>
+</section>
+
+<section id="productos">
+<h2>Nuestros Productos</h2>
+
+<div class="productos">
+
+<div class="card">
+<h3>🪵 Tablas para Asado</h3>
+<p>Tablas resistentes y elegantes, ideales para servir carnes.</p>
+</div>
+
+<div class="card">
+<h3>🧉 Mates</h3>
+<p>Mates artesanales con terminaciones premium.</p>
+</div>
+
+<div class="card">
+<h3>🍷 Copas</h3>
+<p>Copas ideales para acompañar tus mejores momentos.</p>
+</div>
+
+<div class="card">
+<h3>🥩 Jamoneras</h3>
+<p>Diseño robusto y práctico para cortar jamón.</p>
+</div>
+
+<div class="card">
+<h3>🔪 Cuchillos</h3>
+<p>Cuchillos de excelente filo y mango artesanal.</p>
+</div>
+
+<div class="card">
+<h3>🍴 Tenedores</h3>
+<p>Tenedores resistentes para el verdadero asador.</p>
+</div>
+
+</div>
+</section>
+
+<section id="contacto">
+<h2>Contacto</h2>
+<p>📞 Teléfono: +54 9 TU NUMERO</p>
+<p>📧 Email: contacto@mgm.com</p>
+<br>
+<a class="btn" href="https://wa.me/549TUNUMERO" target="_blank">
+Contactar por WhatsApp
+</a>
+</section>
+
+<footer>
+<p>© 2026 MGM - Artesanía en Madera</p>
+</footer>
+
+</body>
+</html>
